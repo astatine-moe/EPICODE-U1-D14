@@ -1,9 +1,28 @@
+let timeout;
+
+const showNumber = (number) => {
+    const numberHolder = document.getElementById("number");
+    const numberHolderParent = numberHolder.parentElement;
+
+    // numberHolderParent.style.display = "block";
+    numberHolderParent.style.fontSize = "10em";
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+        numberHolderParent.style.fontSize = "0";
+        // numberHolderParent.style.display = "none";
+    }, 2000);
+
+    numberHolder.innerText = number;
+};
+
 let drawnNumbers = [];
 
 window.onload = function () {
     //load 76 bingo cells
 
-    const bingoBoard = document.getElementById("board");
+    const bingoBoard = document.getElementById("board-content");
 
     bingoBoard.innerHTML = "";
 
@@ -31,6 +50,8 @@ document.getElementById("draw-number").onclick = function () {
     }
 
     drawnNumbers.push(number);
+
+    showNumber(number);
 
     const cell = document.getElementById(number);
 

@@ -10,6 +10,7 @@ body {
     color: rgb(199, 199, 199);
     text-align: center;
     margin-top: 1em;
+    overflow: hidden;
 }
 
 .container {
@@ -19,57 +20,81 @@ body {
 }
 
 #board {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-#user-board {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
+    width: 40%;
 
-#user-board .cell,
-#board .cell {
-    width: 2.5em;
-    height: 2.5em;
-    border: 1px solid rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25em;
-}
-
-#user-board .cell.selected,
-#board .cell.selected {
-    background-color: rgb(255, 255, 255);
+    background: #3397dc;
     color: rgb(0, 0, 0);
+
+    border: 1em solid #226ea1;
+    border-radius: 0.5em;
+
+    padding: 3.5em 1em 2em 1em;
+}
+
+#board h2 {
+    color: white;
+    margin: 0 0 1em 0;
+}
+
+#board-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#board-content .cell {
+    width: 9%;
+    aspect-ratio: 1/1;
+    border: 1px solid #3397dc;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    #board {
+        width: 100%;
+    }
+}
+
+#board-content .cell.selected {
+    background-color: rgb(181, 181, 181);
+    color: rgb(0, 0, 0);
+    text-decoration: line-through;
 }
 
 button {
-    background-color: #43359a;
-    color: white;
-    border: 1px solid #5b49d4;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #c8c8c8;
     border-radius: 5px;
-    padding: 5px;
-    font-size: 20px;
+    padding: 0.75em;
+    font-size: 1em;
 
     transition: background-color 0.2s ease-in-out;
+
+    margin-top: 1em;
+
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #5b49d4;
-    color: white;
-    border: 1px solid #43359a;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 20px;
+    background-color: #c8c8c8;
+}
+
+.number-overlay {
+    /* display: none; */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+
+    font-size: 0;
+
+    transition: font-size 0.2s ease-in-out;
 }
