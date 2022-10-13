@@ -19,9 +19,13 @@ const showNumber = (number) => {
 
 let drawnNumbers = [];
 
-window.onload = function () {
-    //load 76 bingo cells
+const sleep = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
+document.getElementById("load-bingo").onclick = async function () {
+    //load 76 bingo cells
+    document.getElementById("draw-number").style.display = "inline-block";
     const bingoBoard = document.getElementById("board-content");
 
     bingoBoard.innerHTML = "";
@@ -33,6 +37,8 @@ window.onload = function () {
         cell.innerText = i;
 
         bingoBoard.appendChild(cell);
+
+        await sleep(10);
     }
 };
 
