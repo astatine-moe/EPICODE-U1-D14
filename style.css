@@ -1,0 +1,75 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    font-family: "Open Sans", sans-serif;
+
+    background-color: #1b1a22;
+    color: rgb(199, 199, 199);
+    text-align: center;
+    margin-top: 1em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#user-board {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#user-board .cell,
+#board .cell {
+    width: 2.5em;
+    height: 2.5em;
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
+
+#user-board .cell.selected,
+#board .cell.selected {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+button {
+    background-color: #43359a;
+    color: white;
+    border: 1px solid #5b49d4;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #5b49d4;
+    color: white;
+    border: 1px solid #43359a;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
